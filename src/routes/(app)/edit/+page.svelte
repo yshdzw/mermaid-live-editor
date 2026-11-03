@@ -5,6 +5,7 @@
   import DiagramDocButton from '#lib/components/DiagramDocumentationButton.svelte';
   import Editor from '#lib/components/Editor.svelte';
   import EnhancedEditsButton from '#lib/components/EnhancedEditsButton.svelte';
+  import FileMenu from '#lib/components/FileStorage/FileMenu.svelte';
   import History from '#lib/components/History/History.svelte';
   import { startAutoSave } from '#lib/components/History/historyState.svelte.js';
   import McWrapper from '#lib/components/McWrapper.svelte';
@@ -173,7 +174,10 @@
               activeTabID={validatedState.current.editorMode}
               isClosable={false}>
               {#snippet actions()}
-                <DiagramDocButton />
+                <div class="ml-auto flex items-center gap-2">
+                  <FileMenu />
+                  <DiagramDocButton />
+                </div>
               {/snippet}
               <Editor {isMobile} />
             </Card>
